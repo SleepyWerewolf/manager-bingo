@@ -1,7 +1,15 @@
 /* eslint-env node */
 
 module.exports = function(environment) {
-  var ENV = {
+  const {
+    SURGE_API_KEY,
+    SURGE_AUTH_DOMAIN,
+    SURGE_DATABASE_URL,
+    SURGE_STORAGE_BUCKET,
+    SURGE_MESSAGING_SENDER
+  } = process.env;
+
+  const ENV = {
     modulePrefix: 'manager-bingo',
     environment: environment,
     rootURL: '/',
@@ -20,6 +28,14 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    firebase: {
+      apiKey: SURGE_API_KEY,
+      authDomain: SURGE_AUTH_DOMAIN,
+      databaseURL: SURGE_DATABASE_URL,
+      storageBucket: SURGE_STORAGE_BUCKET,
+      messagingSenderId: SURGE_MESSAGING_SENDER
     }
   };
 

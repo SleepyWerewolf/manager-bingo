@@ -3,7 +3,15 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    dotEnv: {
+      clientAllowedKeys: [
+        'SURGE_API_KEY',
+        'SURGE_AUTH_DOMAIN',
+        'SURGE_DATABASE_URL',
+        'SURGE_STORAGE_BUCKET',
+        'SURGE_MESSAGING_SENDER'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
